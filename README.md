@@ -1,6 +1,27 @@
 # urtwm
 FreeBSD driver for RTL8812AU/RTL8821AU
 
+### TO BUILD A DRIVER FOR PFSENSE YOU NEED TO DOWNLOAD THE VERSION FROM FREEBSD-downloads
+
+In this example 11.3 was downloaded and some tweaks were needed.
+
+Install the iso image from the selected version inside a Virtual Box machine.
+
+After that download and compile the source.
+
+Remember to make the changes to the files. The original file doesn't have the version for the raw REALTEK RTL8812AU.
+
+### Alternative to svn PATCH
+
+Add this line to kernel source in:
+
+```sh
+/usr/src/sys/dev/usb/usbdevs
+```
+> ...
+> product REALTEK RTL8192SU 0xc512 RTL8192SU
+> product REALTEK RTL8812AU 0x8812 RTL8812AU 802.11
+
 ### **How-to-build:**
 
 1) Clone / download this repository.  
